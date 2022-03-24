@@ -9,5 +9,15 @@ module.exports = {
         res.send(response);
       }
     })
+  },
+
+  post: (req, res) => {
+    models.cows.postOne(req.body, (err, response) => {
+      if (err) {
+        res.send(err);
+      } else {
+        res.send(`Cow data posted!`);
+      }
+    });
   }
 };
